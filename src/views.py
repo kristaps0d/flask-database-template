@@ -55,7 +55,7 @@ def page_not_found(e):
             _url = f'{_url}{"?" if len(_args) > 0 else ""}{_args}'
             VisitsTable.Insert(_key, _url, _method, _status)
 
-    return Router(_url, _method, _status)
+    return Router(_url, _method, _status, _address)
 
     # if (_status == 'REJECTED'):
     #     # Reject

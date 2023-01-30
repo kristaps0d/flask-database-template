@@ -1,4 +1,15 @@
+body {
+    padding: 3rem;
+}
+
 h1 {
+    margin: 0;
     text-align: center;
     font-size: 3rem;
+}
+
+h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
 }

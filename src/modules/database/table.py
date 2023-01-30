@@ -18,5 +18,8 @@ class Table(ExceptionHandler):
     def SelectTable(self):
         return self.Select("*")
 
+    def SelectRowById(self, id):
+        return self._cursor.execute(f'SELECT * FROM {self._table} WHERE id = {id}').fetchall()
+
     def CreateTable(self):
         self._cursor.execute(f'CREATE TABLE {self._table}{self._schema}')

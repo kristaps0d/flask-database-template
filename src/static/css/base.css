@@ -3,6 +3,6 @@
     src: url('../fonts/OpenSans.ttf');
   }
 
-h1 {
+body {
     font-family: OpenSans;
 }
