@@ -1,4 +1,10 @@
 *__pycache__
+
 *.sql
 *.sqlite
+*.sqlite3
+*.db
+*.database
+*.db3
+
 *.env
