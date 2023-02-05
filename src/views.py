@@ -8,9 +8,9 @@ from src import app
 from src.modules.database.connection import DbConnection
 from src.modules.database.cursor import DbCursor
 
-from src.modules.database.schemas.addresses import Addresses
-from src.modules.database.schemas.visits import Visits
-from src.modules.database.schemas.bans import Bans
+from src.modules.database.schemas.site.addresses import Addresses
+from src.modules.database.schemas.site.visits import Visits
+from src.modules.database.schemas.site.bans import Bans
 
 # routing
 from src.modules.router import Router
@@ -56,17 +56,3 @@ def page_not_found(e):
             VisitsTable.Insert(_key, _url, _method, _status)
 
     return Router(_url, _method, _status, _address)
-
-    # if (_status == 'REJECTED'):
-    #     # Reject
-    #     return PageForbidden()
-
-    # if (_method != 'GET'):
-    #     # Reject
-    #     return PageNotFound()
-
-    # if (_url != '/'):
-    #     # Reject
-    #     return PageNotFound()
-
-    # return render_template('index.html')

@@ -2,9 +2,31 @@
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<script src="{{ url_for('static', filename='js/libs/sha512.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
 {% endblock %}
 
 {% block main %}
-<h1>Index page!</h1>
+
+<div class="auth-wrapper">
+
+    <h3>
+        Authentication
+    </h3>
+
+    <div class="inputs-wrapper">
+        <input id="username" placeholder="username" type="text">
+    </div>
+
+    <div class="inputs-wrapper">
+        <input id="password" placeholder="password" type="password">
+    </div>
+
+    <div class="inputs-wrapper">
+        <label id="message"></label>
+
+        <button onclick="CreateSession()">Login</button>
+    </div>
+</div>
 
 {% endblock %}

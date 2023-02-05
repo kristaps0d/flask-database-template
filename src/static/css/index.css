@@ -1,15 +1,25 @@
-body {
-    padding: 3rem;
+.auth-wrapper {
+    position: fixed;
+
+    top: 40%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
 }
 
-h1 {
+.auth-wrapper > h3 {
     margin: 0;
-    text-align: center;
-    font-size: 3rem;
+    user-select: none;
 }
 
-h3 {
-    margin: 0;
-    text-align: center;
-    font-size: 1.5rem;
+.auth-wrapper > button {
+    margin-top: 0.1rem;
+}
+
+.inputs-wrapper {
+    min-width: max-content;
+}
+
+.inputs-wrapper > label {
+    font-size: 0.8rem;
 }

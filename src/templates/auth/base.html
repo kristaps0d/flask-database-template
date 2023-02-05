@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <meta name=”robots” content=”noindex,nofollow”>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+
+    <div>
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+{% block main %}
+{% endblock %}
+</body>
+</html>

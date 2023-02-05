@@ -1,4 +1,5 @@
-from ..table import Table
+# database
+from src.modules.database.table import Table
 
 class Bans(Table):
 

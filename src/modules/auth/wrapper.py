@@ -3,9 +3,9 @@
 from src.modules.database.connection import DbConnection
 from src.modules.database.cursor import DbCursor
 
-from src.modules.database.schemas.addresses import Addresses
-from src.modules.database.schemas.sessions import Sessions
-from src.modules.database.schemas.users import Users
+from src.modules.database.schemas.site.addresses import Addresses
+from src.modules.database.schemas.site.sessions import Sessions
+from src.modules.database.schemas.site.users import Users
 
 class AuthWrapper(object):
     """

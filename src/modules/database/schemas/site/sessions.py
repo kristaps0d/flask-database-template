@@ -2,7 +2,7 @@
 import datetime
 
 # database
-from ..table import Table
+from src.modules.database.table import Table
 
 class Sessions(Table):
 
@@ -32,8 +32,8 @@ class Sessions(Table):
 
         super().__init__(cursor, _table, _schema)
 
-    def Insert(self, userId, session):
-        self._cursor.execute(f'INSERT INTO {self._table}(userId, session) VALUES("{userId}", "{session}")')
+    def Insert(self, userId, addressId, session):
+        self._cursor.execute(f'INSERT INTO {self._table}(userId, addressId, session) VALUES("{userId}", "{addressId}", "{session}")')
 
     def FindSessionRow(self, session):
         # A slower approach, but no need for sanitization
@@ -64,10 +64,12 @@ class Sessions(Table):
             return False
 
         return aid
-        
-
-        
-
 
     def LockSession(self, session):
-        pass
+        _res = self.FindSessionRow(session)
+
+        if len(_res) < 1:
+            return False
+
+        (_id, _userid, _addressid, _session, _expiresAt, _lockedAt, _createdAt) = _res
+        self._cursor.execute(f'UPDATE {self._table} SET lockedAt = CURRENT_TIMESTAMP WHERE id = {_id}')
